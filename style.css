@@ -235,3 +235,45 @@ footer {
     padding: 1.2rem;
   }
 }
+ #skills {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border-radius: 10px;
+    }
+
+    #skills h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .skill {
+      margin-bottom: 20px;
+    }
+
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .skill-bar {
+      background: #e0e0e0;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      height: 12px;
+      width: 0; 
+      border-radius: 999px;
+      transition: width 1.2s ease-out;
+    }
+
+    .skill-bar-fill {
+      background: #3498db;
+    }
+
