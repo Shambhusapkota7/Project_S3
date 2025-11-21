@@ -5,13 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
 
-  <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <!-- THEME TOGGLE -->
+  <button id="theme-toggle">🌙</button>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="back-to-top">↑</button>
+
   <header>
     <div class="container header-content">
       <h1>Shambhu Sapkota</h1>
@@ -23,6 +27,8 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#gallery">Media</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -36,7 +42,7 @@
         <h2>About Me</h2>
         <p>
           Hi, I’m a budding web developer building my first portfolio. This page
-          is made with basic HTML and CSS as part of my learning journey.
+          now includes advanced HTML5, CSS3, and JavaScript features.
         </p>
       </div>
     </section>
@@ -47,133 +53,104 @@
         <h2>Projects</h2>
 
         <div class="projects-grid">
-          <article class="project-card">
-            <h3>Portfolio Homepage</h3>
-            <!-- Save your screenshot in /images and update the filename here -->
-            <img
-              src="Images/Screenshot 2025-11-14 085447.png"
-              alt="Screenshot of my portfolio homepage"
-            />
-        
-            <p>
-              This is my first project: Plant disease detection page using semantic
-              HTML, CSS styling, and GitHub Pages deployment. IT show the diseases
-              of plants with their images.
-            </p>
+          <!-- Project 1 -->
+          <article class="project-card project-link" data-url="https://yourproject1.com">
+            <h3>Plant Disease Detection</h3>
+            <img src="Images/Screenshot 2025-11-14 085447.png" />
+            <p>Detect plant diseases using images.</p>
           </article>
 
-          <!-- Dummy projects -->
-          <article class="project-card">
-            <h3>Project Two</h3>
-             <img
-              src="Images/Screenshot 2025-11-14 085614.png"
-              alt="Screenshot of my portfolio homepage"
-            />
-            <p>
-              This is my second project weather app using HTML, CSS,PHP and JavaScript to fetch
-              the current weather data from an API.
-            </p>
+          <!-- Project 2 -->
+          <article class="project-card project-link" data-url="https://yourproject2.com">
+            <h3>Weather App</h3>
+            <img src="Images/Screenshot 2025-11-14 085614.png" />
+            <p>Weather data using API (HTML, CSS, JS, PHP).</p>
           </article>
 
-          <article class="project-card">
-            <h3>Project Three (Coming Soon)</h3>
-            <p>
-              Another placeholder project to make the portfolio look richer and
-              show upcoming work.
-            </p>
+          <!-- Project 3 -->
+          <article class="project-card project-link" data-url="https://github.com">
+            <h3>Project Three</h3>
+            <p>Coming soon.</p>
           </article>
         </div>
       </div>
     </section>
 
-<div class="spacer"></div>
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <h2>My Skills</h2>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <h2>My Skills</h2>
+      <div class="skill">
+        <div class="skill-name"><span>HTML</span><span>90%</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-percent="90"></div></div>
+      </div>
 
-    <div class="skill">
-      <div class="skill-name">
-        <span>HTML</span>
-        <span>90%</span>
+      <div class="skill">
+        <div class="skill-name"><span>CSS</span><span>80%</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-percent="80"></div></div>
       </div>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" data-percent="90"></div>
-      </div>
-    </div>
 
-    <div class="skill">
-      <div class="skill-name">
-        <span>CSS</span>
-        <span>80%</span>
+      <div class="skill">
+        <div class="skill-name"><span>JavaScript</span><span>70%</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-percent="70"></div></div>
       </div>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" data-percent="80"></div>
-      </div>
-    </div>
 
-    <div class="skill">
-      <div class="skill-name">
-        <span>JavaScript</span>
-        <span>70%</span>
+      <div class="skill">
+        <div class="skill-name"><span>Python</span><span>65%</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-percent="65"></div></div>
       </div>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" data-percent="70"></div>
-      </div>
-    </div>
+    </section>
 
-    <div class="skill">
-      <div class="skill-name">
-        <span>Python</span>
-        <span>65%</span>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" data-percent="65"></div>
-      </div>
-    </div>
+    <!-- HTML5 Media Section -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2>Media Section (HTML5)</h2>
 
-  </section>
-    <!-- Contact Section -->
+        <video controls width="100%">
+          <source src="video.mp4" type="video/mp4">
+        </video>
+
+        <audio controls>
+          <source src="audio.mp3" type="audio/mpeg">
+        </audio>
+
+        <canvas id="myCanvas" width="300" height="150"></canvas>
+      </div>
+    </section>
+
+    <!-- IMAGE SLIDER -->
+    <section id="slider" class="section">
+      <h2>Image Slider</h2>
+      <div class="slider-container">
+        <button class="slider-btn" id="prev">‹</button>
+        <img id="slider-img" src="Images/slide1.jpg" />
+        <button class="slider-btn" id="next">›</button>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
     <section id="contact" class="section">
       <div class="container">
         <h2>Contact Me</h2>
-        <p>If you’d like to get in touch, fill out the form below.</p>
 
-        <form action="#" method="post" class="contact-form">
+        <form id="contact-form">
           <div class="form-group">
-            <label for="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Your Name"
-              required
-            />
+            <label>Name</label>
+            <input type="text" id="name" required>
           </div>
 
           <div class="form-group">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="you@example.com"
-              required
-            />
+            <label>Email</label>
+            <input type="email" id="email" required>
           </div>
 
           <div class="form-group">
-            <label for="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              placeholder="Write your message here..."
-              required
-            ></textarea>
+            <label>Message</label>
+            <textarea id="message" required></textarea>
           </div>
 
           <button type="submit" class="btn">Send Message</button>
+          <p id="form-msg"></p>
         </form>
       </div>
     </section>
@@ -181,10 +158,10 @@
 
   <footer>
     <div class="container">
-      <p>&copy; <span id="year"></span> Shambhu Sapkota. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> Shambhu Sapkota</p>
     </div>
-<script src="script.js" type="text/javascript"></script>
-   
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
