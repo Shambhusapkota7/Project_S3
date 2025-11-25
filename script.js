@@ -1,118 +1,144 @@
 // ========== YEAR ==========
-document.getElementById("year").textContent = new Date().getFullYear();
-
+const yearSpan = document.getElementById("year");
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear();
+}
 
 // ========== SKILL ANIMATION ==========
-const skillsSection = document.querySelector('#skills');
-const skillBars = document.querySelectorAll('.skill-bar-fill');
+const skillsSection = document.querySelector("#skills");
+const skillBars = document.querySelectorAll(".skill-bar-fill");
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      skillBars.forEach(bar => {
-        bar.style.width = bar.dataset.percent + "%";
+if (skillsSection && skillBars.length > 0) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          skillBars.forEach((bar) => {
+            bar.style.width = bar.dataset.percent + "%";
+          });
+          observer.unobserve(skillsSection);
+        }
       });
-      observer.unobserve(skillsSection);
-    }
-  });
-}, { threshold: 0.3 });
+    },
+    { threshold: 0.3 }
+  );
 
-observer.observe(skillsSection);
+  observer.observe(skillsSection);
+}
 
-
-// ========== CONTACT FORM ==========
+// ========== CONTACT FORM (VALIDATION + LOCALSTORAGE + REDIRECT) ==========
 const form = document.getElementById("contact-form");
+
 if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let msg = document.getElementById("message").value.trim();
-    let output = document.getElementById("form-msg");
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const messageInput = document.getElementById("message");
+    const formMsg = document.getElementById("form-msg");
 
-    if (name === "" || email === "" || msg === "") {
-      output.textContent = "Please fill all fields!";
-      output.style.color = "red";
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
+
+    let errors = [];
+
+    if (name.length < 2) {
+      errors.push("Name must be at least 2 characters.");
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      errors.push("Please enter a valid email address.");
+    }
+
+    if (message.length < 5) {
+      errors.push("Message must be at least 5 characters.");
+    }
+
+    if (errors.length > 0) {
+      formMsg.textContent = errors.join(" ");
+      formMsg.style.color = "tomato";
       return;
     }
 
-    localStorage.setItem("name", name);
-    localStorage.setItem("email", email);
-    localStorage.setItem("message", msg);
+    // SAVE TO LOCAL STORAGE
+    localStorage.setItem("formName", name);
+    localStorage.setItem("formEmail", email);
+    localStorage.setItem("formMessage", message);
 
-    output.textContent = "Success! Redirecting...";
-    output.style.color = "green";
+    formMsg.textContent = "Form submitted successfully! Redirecting...";
+    formMsg.style.color = "lightgreen";
 
     setTimeout(() => {
-      window.location.href = "form-details.html";
+      window.location.href = "forms-details.html";
     }, 800);
   });
 }
 
-
-// ========== DISPLAY SUBMITTED DATA ==========
-if (window.location.pathname.includes("form-details.html")) {
-  document.getElementById("display-name").textContent = localStorage.getItem("name");
-  document.getElementById("display-email").textContent = localStorage.getItem("email");
-  document.getElementById("display-message").textContent = localStorage.getItem("message");
-}
-
-
-// ========== PROJECT CLICK HANDLING ==========
-document.querySelectorAll(".project-link").forEach(card => {
+// ========== PROJECT CARD CLICK ==========
+document.querySelectorAll(".project-link").forEach((card) => {
   card.addEventListener("click", () => {
-    window.location.href = card.dataset.url;
+    const url = card.dataset.url;
+    if (url) {
+      window.location.href = url;
+    }
   });
 });
 
-
 // ========== DARK / LIGHT MODE ==========
-document.getElementById("theme-toggle").addEventListener("click", () => {
-  document.body.classList.toggle("dark");
+const themeToggle = document.getElementById("theme-toggle");
 
-  let mode = document.body.classList.contains("dark") ? "🌞" : "🌙";
-  document.getElementById("theme-toggle").textContent = mode;
-});
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    themeToggle.textContent = document.body.classList.contains("dark") ? "🌞" : "🌙";
+  });
+}
 
-
-// ========== BACK TO TOP BUTTON ==========
+// ========== BACK TO TOP ==========
 const backToTop = document.getElementById("back-to-top");
 
-window.addEventListener("scroll", () => {
-  backToTop.style.display = window.scrollY > 300 ? "block" : "none";
-});
+if (backToTop) {
+  window.addEventListener("scroll", () => {
+    backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+  });
 
-backToTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
 
 // ========== IMAGE SLIDER ==========
-const images = [
-  "Images/slide1.jpg",
-  "Images/slide2.jpg",
-  "Images/slide3.jpg"
-];
-
+const images = ["Images/slide1.jpg", "Images/slide2.jpg", "Images/slide3.jpg"];
 let index = 0;
+
 const sliderImg = document.getElementById("slider-img");
+const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
 
-document.getElementById("next").onclick = () => {
-  index = (index + 1) % images.length;
-  sliderImg.src = images[index];
-};
+if (sliderImg && nextBtn && prevBtn) {
+  nextBtn.onclick = () => {
+    index = (index + 1) % images.length;
+    sliderImg.src = images[index];
+  };
 
-document.getElementById("prev").onclick = () => {
-  index = (index - 1 + images.length) % images.length;
-  sliderImg.src = images[index];
-};
-
+  prevBtn.onclick = () => {
+    index = (index - 1 + images.length) % images.length;
+    sliderImg.src = images[index];
+  };
+}
 
 // ========== CANVAS DRAW ==========
 const canvas = document.getElementById("myCanvas");
 if (canvas) {
   const ctx = canvas.getContext("2d");
+
   ctx.fillStyle = "#1e90ff";
-  ctx.fillRect(20, 20, 120, 80);
+  ctx.fillRect(20, 20, 260, 110);
+
+  ctx.fillStyle = "white";
+  ctx.font = "16px Arial";
+  ctx.fillText("Hello from Canvas!", 60, 90);
 }

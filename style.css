@@ -97,7 +97,7 @@ nav a:hover {
 }
 
 /* ===========================
-   PROJECTS GRID
+   PROJECTS GRID (CSS GRID)
 =========================== */
 .projects-grid {
   margin-top: 2rem;
@@ -261,6 +261,22 @@ textarea:focus {
 .btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.5);
+}
+
+#form-msg {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+/* ===========================
+   LAYOUT NOTE SECTION
+=========================== */
+#layout-note {
+  background: #020617;
+}
+
+#layout-note p {
+  margin-bottom: 0.5rem;
 }
 
 /* ===========================
