@@ -382,3 +382,24 @@ footer {
     flex-direction: column;
   }
 }
+/* Profile Image Styling */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;  /* makes it round */
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  margin-bottom: 15px;
+}
+
+/* For option 2 (image beside text) */
+.flex-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.flex-header img {
+  margin-bottom: 0;
+}
