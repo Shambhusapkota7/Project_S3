@@ -47,10 +47,28 @@ header {
 }
 
 .header-content {
-  text-align: center;
   padding-bottom: 1rem;
+  text-align: center;
 }
 
+/* Profile Image Styling */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Header Flex */
+.flex-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Navigation */
 nav {
   background: rgba(15, 23, 42, 0.8);
   backdrop-filter: blur(8px);
@@ -70,7 +88,7 @@ nav a {
   letter-spacing: 0.08em;
   padding-bottom: 2px;
   border-bottom: 2px solid transparent;
-  transition: 0.2s ease;
+  transition: 0.2s;
 }
 
 nav a:hover {
@@ -97,7 +115,7 @@ nav a:hover {
 }
 
 /* ===========================
-   PROJECTS GRID (CSS GRID)
+   PROJECTS (GRID)
 =========================== */
 .projects-grid {
   margin-top: 2rem;
@@ -141,8 +159,8 @@ nav a:hover {
 .skill-name {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
   margin-bottom: 6px;
+  font-size: 14px;
 }
 
 .skill-bar {
@@ -155,27 +173,30 @@ nav a:hover {
 .skill-bar-fill {
   height: 100%;
   width: 0;
-  border-radius: 999px;
   background: #3498db;
+  border-radius: 999px;
   transition: width 1.2s ease-out;
 }
 
 /* ===========================
-   MEDIA SECTION (VIDEO/AUDIO/CANVAS)
+   MEDIA (VIDEO/AUDIO/CANVAS)
 =========================== */
 #gallery video,
 #gallery audio {
-  margin-bottom: 20px;
   width: 100%;
+  margin-bottom: 20px;
 }
 
+/* FINAL FIXED CANVAS */
 #myCanvas {
   display: block;
   background: #ffffff;
-  margin: 10px auto;
+  margin: 20px auto;
   border-radius: 10px;
-  border: 2px solid #1d4ed8;
+  border: 4px solid #1d4ed8;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
+
 
 /* ===========================
    IMAGE SLIDER
@@ -184,29 +205,33 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
+  padding: 20px 0;
 }
 
 #slider-img {
-  width: 300px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+  width: 600px;
+  max-width: 90%;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  transition: 0.4s ease-in-out;
 }
 
 .slider-btn {
   background: #1d4ed8;
   color: white;
   border: none;
-  padding: 10px 16px;
+  padding: 15px 18px;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 22px;
-  transition: 0.2s;
+  font-size: 25px;
+  transition: 0.3s;
 }
 
 .slider-btn:hover {
   background: #3b82f6;
+  transform: scale(1.1);
 }
 
 /* ===========================
@@ -225,9 +250,9 @@ nav a:hover {
 }
 
 label {
-  display: block;
-  margin-bottom: 0.35rem;
   font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+  display: block;
 }
 
 input,
@@ -251,9 +276,9 @@ textarea:focus {
   padding: 0.7rem 1.4rem;
   border-radius: 999px;
   border: none;
-  font-weight: bold;
   background: linear-gradient(135deg, #0ea5e9, #6366f1);
   color: white;
+  font-weight: bold;
   cursor: pointer;
   transition: 0.25s;
 }
@@ -269,18 +294,18 @@ textarea:focus {
 }
 
 /* ===========================
-   LAYOUT NOTE SECTION
+   LAYOUT NOTE
 =========================== */
 #layout-note {
   background: #020617;
 }
 
 #layout-note p {
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
 /* ===========================
-   BACK TO TOP BUTTON
+   BACK TO TOP
 =========================== */
 #back-to-top {
   position: fixed;
@@ -288,13 +313,12 @@ textarea:focus {
   right: 25px;
   padding: 12px 16px;
   border-radius: 50%;
-  border: none;
   background: #2563eb;
   color: white;
+  border: none;
   cursor: pointer;
   display: none;
   font-size: 20px;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
 }
 
 #back-to-top:hover {
@@ -302,7 +326,7 @@ textarea:focus {
 }
 
 /* ===========================
-   THEME TOGGLE BUTTON
+   THEME TOGGLE
 =========================== */
 #theme-toggle {
   position: fixed;
@@ -315,7 +339,6 @@ textarea:focus {
   color: white;
   cursor: pointer;
   font-size: 18px;
-  z-index: 1000;
 }
 
 #theme-toggle:hover {
@@ -323,7 +346,7 @@ textarea:focus {
 }
 
 /* ===========================
-   DARK MODE
+   DARK MODE FIXES
 =========================== */
 body.dark {
   background: #ffffff;
@@ -359,6 +382,23 @@ body.dark #slider-img {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
 }
 
+body.dark #myCanvas {
+  border-color: #2563eb;
+}
+
+body.dark #layout-note {
+  background: #f3f4f6;
+}
+
+body.dark footer {
+  background: #f3f4f6;
+  border-top-color: #d1d5db;
+}
+
+body.dark nav a:hover {
+  color: #1e3a8a;
+}
+
 /* ===========================
    FOOTER
 =========================== */
@@ -370,36 +410,30 @@ footer {
   margin-top: 2rem;
 }
 
+footer p {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
 /* ===========================
    RESPONSIVE
 =========================== */
 @media (max-width: 700px) {
+
   nav ul {
     flex-direction: column;
+  }
+
+  .flex-header {
+    flex-direction: column;
+    text-align: center;
   }
 
   .slider-container {
     flex-direction: column;
   }
-}
-/* Profile Image Styling */
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;  /* makes it round */
-  object-fit: cover;
-  border: 3px solid #fff;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-  margin-bottom: 15px;
-}
 
-/* For option 2 (image beside text) */
-.flex-header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.flex-header img {
-  margin-bottom: 0;
+  #slider-img {
+    max-width: 100%;
+  }
 }

@@ -16,9 +16,19 @@
   <!-- BACK TO TOP BUTTON -->
   <button id="back-to-top">↑</button>
 
+  <!-- ======================
+       HEADER (FIXED)
+  ======================= -->
   <header>
+    <div class="container header-content flex-header">
 
-  </div>
+      <img src="Images/WhatsApp Image 2025-11-30 at 9.58.56 AM.jpeg"
+           alt="My Photo" class="profile-img">
+
+      <div>
+        <h1>Shambhu Sapkota</h1>
+        <p>Web Developer | Learner | Builder</p>
+      </div>
 
     </div>
 
@@ -29,65 +39,60 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#gallery">Media</a></li>
+          <li><a href="#slider">Slider</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="#layout-note">Flexbox vs Grid</a></li>
         </ul>
       </div>
     </nav>
-    <header>
-  <div class="container header-content flex-header">
-
-    <img src="Images/WhatsApp Image 2025-11-30 at 9.58.56 AM.jpeg" alt="My Photo" class="profile-img">
-
-    <div>
-      <h1>Shambhu Sapkota</h1>
-      <p>Web Developer | Learner | Builder</p>
-    </div>
   </header>
 
+  <!-- ======================
+       MAIN CONTENT
+  ======================= -->
   <main>
-    <!-- About Section -->
+
+    <!-- ABOUT SECTION -->
     <section id="about" class="section">
       <div class="container">
         <h2>About Me</h2>
         <p>
           Hi, I’m a budding web developer building my first portfolio. This page
-          now includes advanced HTML5, CSS3, and JavaScript features like skill animations,
-          theme toggle, image slider, and JavaScript-powered navigation.
+          includes HTML5, CSS3, JS animations, theme toggle, image slider,
+          canvas drawing, and modern UI components.
         </p>
       </div>
     </section>
 
-    <!-- Projects Section (using CSS GRID for Step 8) -->
+    <!-- PROJECTS SECTION -->
     <section id="projects" class="section">
       <div class="container">
         <h2>Projects</h2>
 
         <div class="projects-grid">
-          <!-- Project 1 -->
+
           <article class="project-card project-link" data-url="https://yourproject1.com">
             <h3>Plant Disease Detection</h3>
-            <img src="Images/Screenshot 2025-11-14 085447.png" alt="Plant Disease Detection Project" />
-            <p>Detect plant diseases using images.</p>
+            <img src="Images/Screenshot 2025-11-14 085447.png" alt="Plant Disease Detection" />
+            <p>Detect plant diseases using image classification.</p>
           </article>
 
-          <!-- Project 2 -->
           <article class="project-card project-link" data-url="https://yourproject2.com">
             <h3>Weather App</h3>
             <img src="Images/Screenshot 2025-11-14 085614.png" alt="Weather App Screenshot" />
-            <p>Weather data using API (HTML, CSS, JS, PHP).</p>
+            <p>Weather API app using HTML, CSS, JS & PHP.</p>
           </article>
 
-          <!-- Project 3 -->
           <article class="project-card project-link" data-url="https://github.com">
             <h3>Project Three</h3>
-            <p>Coming soon.</p>
+            <p>Coming soon…</p>
           </article>
+
         </div>
       </div>
     </section>
 
-    <!-- Skills Section (Animated Bars) -->
+    <!-- SKILLS SECTION -->
     <section id="skills" class="section">
       <h2>My Skills</h2>
 
@@ -112,19 +117,17 @@
       </div>
     </section>
 
-    <!-- HTML5 Media Section (Video, Audio, Canvas) -->
+    <!-- MEDIA SECTION -->
     <section id="gallery" class="section">
       <div class="container">
         <h2>Media Section (HTML5)</h2>
 
         <video controls width="100%">
           <source src="Vedio/Video Project 1.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
         </video>
 
         <audio controls>
           <source src="Audio/Nepali Hami - Natikaji ｜ Lyric Video ｜ Nepali Old Song ｜ Nepali Song ｜ Greatest Hits.mp3" type="audio/mpeg" />
-          Your browser does not support the audio element.
         </audio>
 
         <canvas id="myCanvas" width="300" height="150"></canvas>
@@ -135,60 +138,58 @@
     <section id="slider" class="section">
       <div class="container">
         <h2>Image Slider</h2>
+
         <div class="slider-container">
           <button class="slider-btn" id="prev">‹</button>
-          <img id="slider-img" src="Images/Screenshot 2025-11-27 205423.png" alt="Slide image" />
-          <img id="slider-img" src="Images/Screenshot 2025-11-27 205423.png" alt="Slide image" />
-          <img id="slider-img" src="Images/Screenshot 2025-11-27 205423.png" alt="Slide image" />
-          <img id="slider-img" src="Images/Screenshot 2025-11-27 205423.png" alt="Slide image" />
+          <img id="slider-img" src="Images/Screenshot 2025-11-27 205423.png" alt="Slide">
           <button class="slider-btn" id="next">›</button>
         </div>
+
       </div>
     </section>
 
-    <!-- Contact Form -->
+    <!-- CONTACT FORM -->
     <section id="contact" class="section">
       <div class="container">
         <h2>Contact Me</h2>
 
         <form id="contact-form" class="contact-form">
+
           <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" required />
+            <label>Name</label>
+            <input type="text" id="name" required>
           </div>
 
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" required />
+            <label>Email</label>
+            <input type="email" id="email" required>
           </div>
 
           <div class="form-group">
-            <label for="message">Message</label>
+            <label>Message</label>
             <textarea id="message" rows="4" required></textarea>
           </div>
 
           <button type="submit" class="btn">Send Message</button>
           <p id="form-msg"></p>
+
         </form>
       </div>
     </section>
 
-    <!-- Step 8: Flexbox vs Grid Note -->
+    <!-- LAYOUT NOTE -->
     <section id="layout-note" class="section">
       <div class="container">
-        <h2>Flexbox vs Grid (Layout Note)</h2>
-        <p><strong>Flexbox</strong> is one-dimensional: it is best for arranging items in a single row or a single column (for example, navigation bars or simple lists of cards).</p>
-        <p><strong>CSS Grid</strong> is two-dimensional: it is designed to control both rows and columns at the same time, which is perfect for more complex layouts like project galleries.</p>
-        <p>
-          In this portfolio, I used <strong>CSS Grid</strong> to arrange the
-          <strong>Projects</strong> section (see the <code>.projects-grid</code> in CSS), because it lets me
-          create a responsive grid of cards that automatically adjusts across rows and
-          columns on different screen sizes.
-        </p>
+        <h2>Flexbox vs Grid</h2>
+        <p><strong>Flexbox</strong> = 1D layout (row or column).</p>
+        <p><strong>Grid</strong> = 2D layout (rows + columns).</p>
+        <p>Used Grid in Projects section for responsive card layout.</p>
       </div>
     </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <p>&copy; <span id="year"></span> Shambhu Sapkota</p>
